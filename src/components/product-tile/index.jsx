@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function ProductTile({ product }) {
   return (
     <div>
@@ -23,3 +25,7 @@ export default function ProductTile({ product }) {
     </div>
   );
 }
+
+ProductTile.propTypes = {
+  product: PropTypes.object,
+};
