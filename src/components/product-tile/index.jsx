@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../store/slices/cart-slice";
+import { addToCart, removeFromCart } from "../../store/slices/cart-slice";
 export default function ProductTile({ product }) {
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state);
@@ -11,6 +11,7 @@ export default function ProductTile({ product }) {
 
   function handleRemoveFromCart() {
     console.log("removed");
+    dispatch(removeFromCart(product.id));
   }
 
   return (
